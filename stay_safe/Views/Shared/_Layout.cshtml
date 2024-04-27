@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>Stay Safe</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="~/css/style.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="~/css/responsive.css">
+    <!-- fevicon -->
+    <link rel="icon" href="~/images/fevicon.png" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+    <link rel="stylesheet" href="https://rawgit.com/LeshikJanz/libraries/master/Bootstrap/baguetteBox.min.css">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+</head>
+<!-- body -->
+<body class="main-layout">
+    <!-- loader  -->
+    <div class="loader_bg">
+        <div class="loader"><img src="~/images/loading.gif" alt="#" /></div>
+    </div>
+    <!-- end loader -->
+    <!-- top -->
+    <!-- header -->
+    <header class="header-area">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="left">
+                <form id="logout"  asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                    <a id="sub" href="#"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                  
+                </form>
+
+                
+            </div>
+            <div class="right">
+                <a asp-area="Identity" asp-page="/Account/Manage/Index" ><i class="fa fa-user" aria-hidden="true"></i></a>
+            </div>
+
+        }
+        
+        <div class="container">
+            <div class="row d_flex">
+               @*  <div class="col-sm-3 logo_sm">
+                    <div class="logo">
+                        <a href="index.html">
+
+
+
+                        </a>
+                    </div>
+                </div> *@
+                <div class="col-lg-10 offset-lg-1 col-md-12 ">
+                    <div class="navbar-area">
+                        <nav class="site-navbar">
+
+                            <img style="height:70px;width:200px" src="~/images/logo1.png" />
+
+                            <ul>
+                                <li><a class="active" href="index.html">الرئيسية</a></li>
+                                <li><a href="about.html">About</a></li>
+                                
+                                <li><a asp-area="Identity" asp-page="/Account/Login">Login</a></li>
+                                <li><a asp-area="Identity" asp-page="/Account/Register">Register</a></li>
+                                <li><a asp-action="Hospitals">Hospitals</a></li>
+
+                                <li><a asp-action="Contact" >Contact </a></li>
+                            </ul>
+                            <button class="nav-toggler">
+                                <span></span>
+                            </button>
+
+                           
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- end header -->
+    @RenderBody()
+
+
+
+
+
+    <!--  footer -->
+    <footer class="m-4">
+        <div class="footer">
+            <div class="container">
+                <div class="row justify-content-center">
+
+                    <div class="row justify-content-center">
+
+                        <img src="~/images/logo1.png" />
+
+                    </div>
+
+                    <div class="row justify-content-center">
+                    <div class="col-lg-2 col-md-6 col-sm-6">
+                        <div class="hedingh3 text_align_left">
+                            <h3>Resources</h3>
+                            <ul class="menu_footer">
+                                <li><a href="index.html">Home</a>
+                                <li>
+                                <li><a href="javascript:void(0)">Contact us</a>
+                                <li>
+                                <li> <a href="javascript:void(0)">Login</a>
+                                <li>
+                                <li> <a href="javascript:void(0)">About</a>
+                                <li>
+                                
+                            </ul>
+
+
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="hedingh3 text_align_left">
+                            <h3>About</h3>
+                            <p>If you or your loved one are experiencing pathological renal failure and require urgent dialysis sessions during the Hajj period, finding nearby hospitals equipped to provide these critical services is paramount.</p>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="hedingh3  text_align_left">
+                            <h3>Contact  Us</h3>
+                            <ul class="top_infomation">
+                                <li>
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                    Making this the first true
+                                </li>
+                                <li>
+                                    <i class="fa fa-phone" aria-hidden="true"></i>
+                                    Call : +000000000
+                                </li>
+                                <li>
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    <a href="Javascript:void(0)">Email : stay-safe@gmail.com</a>
+                                </li>
+                            </ul>
+
+
+                        </div>
+                    </div>
+                 
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 offset-md-2">
+                            <p>© 2020 All Rights Reserved. Stay-safe.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // Function to submit the form
+        function submitForm() {
+            document.getElementById("logout").submit();
+        }
+
+        // Event listener for the link
+        document.getElementById("sub").addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent the default action of the link
+            submitForm(); // Call the function to submit the form
+        });
+    </script>
+
+
+
+
+
+
+
+    <!-- end footer -->
+    <!-- Javascript files-->
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/custom.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+
+
+
+
